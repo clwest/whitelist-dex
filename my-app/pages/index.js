@@ -120,7 +120,7 @@ export default function Home() {
       const _swapAmountWei = utils.parseEther(_swapAmount.toString());
 
       if(!_swapAmountWei.eq(zero)) {
-        const provider = getProviderOrSigner();
+        const provider = await getProviderOrSigner();
         // get amount of eth in contract
         const _ethBalance = await getEtherBalance(provider, null, true);
         // Call the getAmountOfTokensReceivedFromSwap from the utils folder
@@ -415,7 +415,7 @@ return (
           <button
             className={styles.button}
             onClick={() => {
-              setLiquidityTab(true);
+              setLiquidityTab(!liquidityTab);
             }}
           >
             Liquidity

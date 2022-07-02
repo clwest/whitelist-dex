@@ -51,6 +51,7 @@ contract Exchange is ERC20 {
     function removeLiquidity(uint _amount) public returns (uint, uint) {
         require(_amount > 0, "_amount should be greater than zero");
         uint ethReserve = address(this).balance;
+        
         uint _totalSupply = totalSupply();
         // Ratio is -> (Eth sent back to the user) / (current Eth reserve)
         uint ethAmount = (ethReserve * _amount) / _totalSupply;

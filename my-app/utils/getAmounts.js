@@ -9,7 +9,7 @@ import {
 
 // Retrieves teh balance of user or contract
 
-export const getEtherBalance = async (provider, address, contract=false) => {
+export const getEtherBalance = async (provider, address, contract = false) => {
     try {
         // caller has set the contract bool to true
         if (contract) {

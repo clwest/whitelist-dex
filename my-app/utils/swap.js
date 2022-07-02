@@ -45,7 +45,7 @@ export const getAmountOfTokensReceivedFromSwap = async (
 
 export const swapTokens = async (
   signer,
-  _swapAmountWei,
+  swapAmountWei,
   tokenToBeReceivedAfterSwap,
   ethSelected
 ) => {
@@ -64,17 +64,24 @@ export const swapTokens = async (
   let tx;
 
   if (ethSelected) {
-    tx = await exchangeContract.ethToCryptoDevToken(
+    tx = await exchangeContract.ethToCyptoDevToken(
       tokenToBeReceivedAfterSwap,
       {
-        value: swapAmountWei
+        value: swapAmountWei,
       }
     )
   } else {
+    tx = await tokenContract.approve(
+      EXCHANGE_CONTRACT_ADDRESS,
+      swapAmountWei.toString()
+    )
+    await tx.wait();
+
     tx = await exchangeContract.cryptoDevTokenToEth(
       swapAmountWei,
       tokenToBeReceivedAfterSwap
     )
   }
+
   await tx.wait()
-}
+};
