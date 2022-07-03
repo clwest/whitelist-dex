@@ -1,5 +1,3 @@
-
-export const TOKEN_CONTRACT_ADDRESS = "0x0CA2d517Dc535cB16B9511D202081Ffb22a3e05B"
 export const TOKEN_CONTRACT_ABI = [
   {
     "inputs": [
@@ -428,8 +426,9 @@ export const TOKEN_CONTRACT_ABI = [
     "type": "receive"
   }
 ]
+export const TOKEN_CONTRACT_ADDRESS = "0xE60b9E2dFE4fc0f06AB9E7B8323aBf22632E25f3"
 
-export const EXCHANGE_CONTRACT_ADDRESS = "0x6cfEE968aC9aa5A67930cAd17EE68182Ff92a07c"
+
 export const EXCHANGE_CONTRACT_ABI = [
   {
     "inputs": [
@@ -842,3 +841,5 @@ export const EXCHANGE_CONTRACT_ABI = [
     "type": "function"
   }
 ]
+
+export const EXCHANGE_CONTRACT_ADDRESS = "0xf97a03f95262f8D2DAD609c641BcEA4E33829137"

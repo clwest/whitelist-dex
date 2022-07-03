@@ -20,8 +20,8 @@ export const getTokensAfterRemove = async (
 ) => {
     try {
         const exchangeContract = new Contract(
-            EXCHANGE_CONTRACT_ABI,
             EXCHANGE_CONTRACT_ADDRESS,
+            EXCHANGE_CONTRACT_ABI,
             provider
         )
         
