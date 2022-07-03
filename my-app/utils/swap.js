@@ -50,14 +50,16 @@ export const swapTokens = async (
   ethSelected
 ) => {
   const exchangeContract = new Contract(
-    EXCHANGE_CONTRACT_ABI,
     EXCHANGE_CONTRACT_ADDRESS,
+    EXCHANGE_CONTRACT_ABI,
+
     signer
   )
 
   const tokenContract = new Contract(
-    TOKEN_CONTRACT_ABI,
     TOKEN_CONTRACT_ADDRESS,
+    TOKEN_CONTRACT_ABI,
+
     signer
   )
 
