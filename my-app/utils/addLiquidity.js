@@ -17,7 +17,6 @@ export const addLiquidity = async (
         const tokenContract = new Contract(
             TOKEN_CONTRACT_ADDRESS,
             TOKEN_CONTRACT_ABI,
-
             signer
         )
         // create a new instanace of the exchange contract
